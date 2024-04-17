@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".ProductListingFragment"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:paddingEnd="8dp"
+            >
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Ürünler"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="91dp"
+                android:layout_height="34dp"
+                android:layout_gravity="right"
+                android:background="@drawable/bg_cart_button"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <ImageView
+                    android:id="@+id/ivCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cart"/>
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"/>
+
+
+                <LinearLayout
+                    android:layout_width="57dp"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_cart_text"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvTotalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₺0,00"
+                        android:textColor="@color/color_text_primary"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
