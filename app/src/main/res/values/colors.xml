@@ -11,5 +11,6 @@
 
     <color name="color_primary_subtle">#FFF2F0FA</color>
 
+    <color name="color_background_body">#F5F5F5</color>
 
 </resources>
