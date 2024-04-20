@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getir_bootcamp_final_project.adapter.CartAdapter
+import com.example.getir_bootcamp_final_project.adapter.ProductAdapter
 import com.example.getir_bootcamp_final_project.databinding.FragmentBasketBinding
 import com.example.getir_bootcamp_final_project.databinding.FragmentDetailBinding
 import com.example.getir_bootcamp_final_project.utils.DividerItemDecorator
@@ -22,6 +23,7 @@ class BasketFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var cartProductRecyclerView: RecyclerView
+    private lateinit var suggestedProductRecyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,17 +36,27 @@ class BasketFragment : Fragment() {
     ): View? {
         _binding = FragmentBasketBinding.inflate(inflater, container, false)
         cartProductRecyclerView = binding.rvCartProducts
+        suggestedProductRecyclerView = binding.rvSuggestedProducts
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this.context)
+        val verticalLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this.context)
+        val horizontalLayoutManager = LinearLayoutManager(this.context)
+        horizontalLayoutManager.orientation = RecyclerView.HORIZONTAL
 
-        cartProductRecyclerView.layoutManager = layoutManager
+        cartProductRecyclerView.layoutManager = verticalLayoutManager
         cartProductRecyclerView.adapter = CartAdapter(productList)
         val itemDecoration = DividerItemDecorator(ContextCompat.getDrawable(this.requireContext(), R.drawable.divider_cart_product)!!)
         cartProductRecyclerView.addItemDecoration(itemDecoration)
+        cartProductRecyclerView.isNestedScrollingEnabled = false
+
+
+        suggestedProductRecyclerView.layoutManager = horizontalLayoutManager
+        suggestedProductRecyclerView.adapter = ProductAdapter(productList)
+
+
     }
 
 }

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="78dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:background="@color/white"
     android:layout_marginTop="12dp"
     android:layout_marginBottom="12dp"
+    android:gravity="center_vertical"
     >
 
     <com.google.android.material.card.MaterialCardView
@@ -28,8 +29,8 @@
         android:layout_width="131dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
         android:layout_marginLeft="16dp"
+        android:layout_weight="1"
         >
 
         <TextView
@@ -69,8 +70,8 @@
         app:strokeWidth="0dp"
         app:cardElevation="4dp"
         app:cardCornerRadius="10dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="16dp"
+
+        android:layout_marginLeft="12dp"
         android:layout_marginRight="2dp"
         >
 
@@ -81,8 +82,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_decrement_container"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 app:strokeWidth="0dp"
                 android:background="@drawable/btn_ripple"
                 app:cardBackgroundColor="@color/white"
@@ -100,8 +101,8 @@
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="48dp"
+                android:layout_width="38dp"
+                android:layout_height="32dp"
                 android:gravity="center"
                 android:background="@color/color_primary"
                 >
@@ -121,19 +122,18 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_increment_container"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 app:strokeWidth="0dp"
                 app:cardBackgroundColor="@color/white"
                 android:clickable="true"
-                app:cardCornerRadius="10dp"
-                >
+                app:cardCornerRadius="10dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_plus"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_plus" />
 
             </com.google.android.material.card.MaterialCardView>
 

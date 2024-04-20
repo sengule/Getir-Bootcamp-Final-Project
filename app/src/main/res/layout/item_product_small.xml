@@ -4,7 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="100dp"
-    android:layout_height="153dp">
+    android:layout_height="153dp"
+    android:layout_marginEnd="16dp"
+    >
 
     <LinearLayout
         android:id="@+id/ll_product_container"
@@ -12,8 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/white"
-        android:paddingTop="10dp"
-        >
+        android:paddingTop="10dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_image_holder"
@@ -21,8 +22,7 @@
             android:layout_height="92dp"
             app:cardCornerRadius="16dp"
             android:layout_gravity="center"
-            app:strokeColor="@color/color_primary_subtle"
-            >
+            app:strokeColor="@color/color_primary_subtle">
 
             <ImageView
                 android:id="@+id/iv_product_image"
