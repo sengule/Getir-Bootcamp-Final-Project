@@ -22,14 +22,14 @@
             android:layout_height="92dp"
             app:cardCornerRadius="16dp"
             android:layout_gravity="center"
+            app:cardBackgroundColor="@color/white"
             app:strokeColor="@color/color_primary_subtle">
 
             <ImageView
                 android:id="@+id/iv_product_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/market"
-                android:scaleType="centerCrop"/>
+                android:src="@drawable/market" />
 
         </com.google.android.material.card.MaterialCardView>
 

@@ -52,7 +52,6 @@ class BasketFragment : Fragment() {
         cartProductRecyclerView.addItemDecoration(itemDecoration)
         cartProductRecyclerView.isNestedScrollingEnabled = false
 
-
         suggestedProductRecyclerView.layoutManager = horizontalLayoutManager
         suggestedProductRecyclerView.adapter = ProductAdapter(productList)
 

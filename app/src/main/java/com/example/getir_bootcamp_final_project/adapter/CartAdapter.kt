@@ -25,5 +25,4 @@ class CartAdapter(
 
     override fun getItemCount() = productList.size
 
-
 }
