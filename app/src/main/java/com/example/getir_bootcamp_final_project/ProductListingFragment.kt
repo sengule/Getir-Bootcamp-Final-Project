@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getir_bootcamp_final_project.adapter.ProductAdapter
-import com.example.getir_bootcamp_final_project.databinding.FragmentBasketBinding
 import com.example.getir_bootcamp_final_project.databinding.FragmentProductListingBinding
-import com.example.getir_bootcamp_final_project.utils.MarginItemDecorator
+import com.example.getir_bootcamp_final_project.utils.GridItemDecorator
+import com.example.getir_bootcamp_final_project.utils.ItemDecorator
 import com.example.getir_bootcamp_final_project.utils.productList
 
 class ProductListingFragment : Fragment() {
@@ -41,18 +41,24 @@ class ProductListingFragment : Fragment() {
         val gridLayoutManager = GridLayoutManager(this.context, 3)
 
         val horizontalLayoutManager = LinearLayoutManager(this.context, RecyclerView.HORIZONTAL, false)
+        val margin = resources.getDimensionPixelSize(R.dimen.dimen_16dp)
+        val itemDecoration = ItemDecorator(margin)
 
-        productsHorizontalRecyclerView.layoutManager = horizontalLayoutManager
-        productsHorizontalRecyclerView.adapter = ProductAdapter(productList)
-        val margin = resources.getDimensionPixelSize(R.dimen.margin_start)
-        val itemDecoration = MarginItemDecorator(margin)
-        productsHorizontalRecyclerView.addItemDecoration(itemDecoration)
+        productsHorizontalRecyclerView.apply {
+            layoutManager = horizontalLayoutManager
+            adapter = ProductAdapter(productList)
+            addItemDecoration(itemDecoration)
+        }
 
         val newList = productList + productList + productList + productList
+        val gridMargin = resources.getDimensionPixelSize(R.dimen.dimen_10dp)
+        val gridDecorator = GridItemDecorator(3, gridMargin)
 
-        productsVerticalRecyclerView.layoutManager = gridLayoutManager
-        productsVerticalRecyclerView.adapter = ProductAdapter(newList, ProductAdapter.ITEM_LARGE)
-
+        productsVerticalRecyclerView.apply {
+            layoutManager = gridLayoutManager
+            adapter = ProductAdapter(newList, ProductAdapter.ITEM_LARGE)
+            addItemDecoration(gridDecorator)
+        }
     }
 
 }
