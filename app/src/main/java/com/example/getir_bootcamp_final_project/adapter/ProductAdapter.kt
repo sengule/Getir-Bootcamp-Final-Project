@@ -39,13 +39,13 @@ class ProductAdapter(
                 val smallViewHolder = holder as ProductSmallViewHolder
                 smallViewHolder.binding.tvProductName.text = item.name
                 smallViewHolder.binding.tvProductAttribute.text = item.attribute
-                smallViewHolder.binding.tvProductPrice.text = item.price
+                smallViewHolder.binding.tvProductPrice.text = item.priceText
             }
             ITEM_LARGE -> {
                 val largeViewHolder = holder as ProductLargeViewHolder
                 largeViewHolder.binding.tvProductName.text = item.name
                 largeViewHolder.binding.tvProductAttribute.text = item.attribute
-                largeViewHolder.binding.tvProductPrice.text = item.price
+                largeViewHolder.binding.tvProductPrice.text = item.priceText
             }
         }
     }

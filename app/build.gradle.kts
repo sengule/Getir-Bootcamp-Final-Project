@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -38,6 +40,9 @@ android {
     }
 }
 
+val nav_version = "2.7.7"
+val hilt_version = "2.48"
+val retrofit_version = "2.11.0"
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -48,4 +53,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // DI
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    // Gson
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
 }
+

@@ -20,7 +20,7 @@ class CartAdapter(
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         holder.binding.tvProductName.text = productList[position].name
         holder.binding.tvProductAttribute.text = productList[position].attribute
-        holder.binding.tvProductPrice.text = productList[position].price
+        holder.binding.tvProductPrice.text = productList[position].priceText
     }
 
     override fun getItemCount() = productList.size
