@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -43,6 +44,8 @@ android {
 val nav_version = "2.7.7"
 val hilt_version = "2.48"
 val retrofit_version = "2.11.0"
+val glide_version = "4.16.0"
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -69,5 +72,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
+    // Glide
+    implementation("com.github.bumptech.glide:glide:$glide_version")
 }
 

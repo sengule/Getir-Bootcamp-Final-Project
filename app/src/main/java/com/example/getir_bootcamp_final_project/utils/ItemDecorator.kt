@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ItemDecorator(
     private val marginStart: Int = 0,
+    private val spacing: Int = 0
 ): RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(
@@ -21,5 +22,7 @@ class ItemDecorator(
         } else {
             outRect.left = 0
         }
+
+        outRect.right = spacing
     }
 }

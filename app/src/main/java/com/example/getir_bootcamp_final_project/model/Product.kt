@@ -1,7 +1,5 @@
 package com.example.getir_bootcamp_final_project.model
 
-import android.graphics.Bitmap
-
 data class Product(
     val id: String,
     val name: String,
@@ -14,6 +12,8 @@ data class Product(
     val category: String? = null,
     val unitPrice: Double? = null,
     val squareThumbnailURL: String? = null,
-    val status: Int? = null
+    val status: Int? = null,
+
+    var quantity: Int = 0
 )
 

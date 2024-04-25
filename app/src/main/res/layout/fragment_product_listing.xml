@@ -34,6 +34,7 @@
                 android:textColor="@color/white" />
 
             <LinearLayout
+                android:id="@+id/ll_cart"
                 android:layout_width="91dp"
                 android:layout_height="34dp"
                 android:layout_gravity="right"
@@ -78,6 +79,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -85,6 +87,7 @@
         >
 
         <LinearLayout
+            android:id="@+id/ll_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -92,6 +95,7 @@
             >
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_horizontal_product_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="0dp"
@@ -112,6 +116,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cr_products_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="0dp"
