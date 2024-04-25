@@ -66,6 +66,7 @@ class DetailFragment : Fragment() {
                         tvProductPrice.text = "₺"+it.price.formatDouble(2).replace('.',',')
                         tvProductName.text = it.name
                         tvProductAttribute.text = it.attribute
+                        tvProductQuantity.text = it.quantity.toString()
 
                         toggleButtons(it.quantity)
                     }
