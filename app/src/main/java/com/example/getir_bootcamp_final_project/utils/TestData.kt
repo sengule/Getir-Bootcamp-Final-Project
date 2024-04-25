@@ -1,38 +1,41 @@
 package com.example.getir_bootcamp_final_project.utils
 
-import android.graphics.BitmapFactory
-import com.example.getir_bootcamp_final_project.R
 import com.example.getir_bootcamp_final_project.model.Product
 
 val productList = listOf<Product>(
     Product(
+        id = "1",
         name = "Product 1",
-        price = "₺10.2",
+        price = 0.0,
+        priceText = "₺0.0",
         attribute = "test",
-        image = R.drawable.market
     ),
     Product(
+        id = "2",
         name = "Product 2",
-        price = "₺20.1",
+        price = 0.0,
+        priceText = "₺0.0",
         attribute = "test",
-        image = R.drawable.market
     ),
     Product(
+        id = "3",
         name = "Product 3",
-        price = "₺30.0",
+        price = 0.0,
+        priceText = "₺0.0",
         attribute = "test",
-        image = R.drawable.market
     ),
     Product(
+        id = "4",
         name = "Product 4",
-        price = "₺5.0",
+        price = 0.0,
+        priceText = "₺0.0",
         attribute = "test",
-        image = R.drawable.market
     ),
     Product(
+        id = "5",
         name = "Product 5",
-        price = "₺5.1",
+        price = 0.0,
+        priceText = "₺0.0",
         attribute = "test",
-        image = R.drawable.market
     )
 )

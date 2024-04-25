@@ -33,6 +33,7 @@
                 android:textColor="@color/white" />
 
             <LinearLayout
+                android:id="@+id/ll_cart_container"
                 android:layout_width="91dp"
                 android:layout_height="34dp"
                 android:layout_gravity="right"
@@ -61,10 +62,12 @@
                     >
 
                     <TextView
+                        style="@style/PrimaryTextViewStyle"
                         android:id="@+id/tvTotalPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="₺0,00"
+                        android:textSize="14sp"
                         android:textColor="@color/color_text_primary"
                         />
 
@@ -177,7 +180,6 @@
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
                 android:text="Sepete Ekle"
-                android:visibility="gone"
                 />
 
             <com.google.android.material.card.MaterialCardView

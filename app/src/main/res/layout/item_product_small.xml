@@ -1,12 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="100dp"
-    android:layout_height="153dp"
-    android:layout_marginEnd="16dp"
+    android:layout_width="103dp"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:clipToPadding="false"
     >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_button_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        app:cardBackgroundColor="@color/white"
+        app:strokeColor="@null"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_add_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:cardCornerRadius="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                android:clickable="true"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus"
+                    android:layout_gravity="center"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/ll_expandable_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:background="@color/color_primary"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_product_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:textSize="16sp"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_decrement_container"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:strokeWidth="0dp"
+                    android:background="@drawable/btn_ripple"
+                    app:cardBackgroundColor="@color/white"
+                    android:clickable="true"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_decrement_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_trash"
+                        android:layout_gravity="center"/>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:id="@+id/ll_product_container"
@@ -14,68 +107,72 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/white"
-        android:paddingTop="10dp">
+        android:layout_marginTop="10dp"
+        >
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_image_holder"
-            android:layout_width="92dp"
-            android:layout_height="92dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             android:layout_gravity="center"
-            app:cardBackgroundColor="@color/white"
-            app:strokeColor="@color/color_primary_subtle">
+            app:strokeColor="@color/color_primary_subtle"
+            >
 
             <ImageView
                 android:id="@+id/iv_product_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/market" />
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:src="@drawable/market"
+                android:scaleType="centerInside"
+                android:layout_gravity="center"
+                />
 
         </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/tv_product_price"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="₺0,00"
-            android:fontFamily="@font/open_sans_bold"
-            android:textColor="@color/color_text_primary"
-            android:textSize="14sp"/>
+            android:orientation="vertical"
+            android:paddingStart="5dp"
+            >
 
-        <TextView
-            android:id="@+id/tv_product_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Product Name"
-            android:fontFamily="@font/open_sans_semibold"
-            android:textColor="@color/color_text_dark"
-            android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₺0,00"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/color_text_primary"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                />
 
-        <TextView
-            android:id="@+id/tv_product_attribute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans_semibold"
-            android:text="Attribute"
-            android:textColor="@color/color_text_secondary"
-            android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Name"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textColor="@color/color_text_dark"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tv_product_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Attribute"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"
+                />
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_gravity="top|end"
-        app:cardBackgroundColor="@color/white"
-        app:strokeColor="@null"
-        app:cardElevation="5dp"
-        >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_plus"
-            android:layout_gravity="center"/>
-    </com.google.android.material.card.MaterialCardView>
 </FrameLayout>
-

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="78dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:background="@color/white"
@@ -75,69 +75,75 @@
         android:layout_marginRight="2dp"
         >
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cv_decrement_container"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                app:strokeWidth="0dp"
-                android:background="@drawable/btn_ripple"
-                app:cardBackgroundColor="@color/white"
-                android:clickable="true"
-                app:cardCornerRadius="10dp"
-                >
-
-                <ImageView
-                    android:id="@+id/iv_decrement_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_trash"
-                    android:layout_gravity="center"/>
-
-            </com.google.android.material.card.MaterialCardView>
+            android:orientation="horizontal"
+            app:cardCornerRadius="8dp"
+            app:strokeWidth="0dp"
+            >
 
             <LinearLayout
-                android:layout_width="38dp"
-                android:layout_height="32dp"
-                android:gravity="center"
-                android:background="@color/color_primary"
-                >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_product_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/open_sans_bold"
-                    android:textSize="16sp"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_decrement_container"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:clickable="true"
+                    app:cardCornerRadius="1dp"
+                    >
+                    <ImageView
+                        android:id="@+id/iv_decrement_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_trash"
+                        android:layout_gravity="center"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="38dp"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:background="@color/color_primary"
                     >
 
-                </TextView>
+                    <TextView
+                        android:id="@+id/tv_product_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:textSize="16sp"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_increment_container"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:clickable="true"
+                    app:cardCornerRadius="1dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_plus" />
+
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cv_increment_container"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                app:strokeWidth="0dp"
-                app:cardBackgroundColor="@color/white"
-                android:clickable="true"
-                app:cardCornerRadius="10dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_plus" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </com.google.android.material.card.MaterialCardView>
 
