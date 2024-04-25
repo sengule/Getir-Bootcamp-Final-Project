@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.getir_bootcamp_final_project.R
 import com.example.getir_bootcamp_final_project.databinding.ItemCartBinding
 import com.example.getir_bootcamp_final_project.model.Product
 import com.example.getir_bootcamp_final_project.utils.handleProductImageUrl
@@ -42,6 +43,14 @@ class CartAdapter(
             cvDecrementContainer.setOnClickListener {
                 onDecButtonClicked(productList[position], tvProductQuantity, ivDecrementIcon)
             }
+
+            val placeholder = if (productList[position].quantity > 1) {
+                ivDecrementIcon.context.resources.getDrawable(R.drawable.ic_minus, null)
+            } else {
+                ivDecrementIcon.context.resources.getDrawable(R.drawable.ic_trash, null)
+            }
+
+            ivDecrementIcon.setImageDrawable(placeholder)
         }
 
         val imageUrl = handleProductImageUrl(productList[position])

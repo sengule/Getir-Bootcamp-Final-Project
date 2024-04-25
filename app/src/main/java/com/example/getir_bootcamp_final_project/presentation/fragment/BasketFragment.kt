@@ -110,10 +110,16 @@ class BasketFragment : Fragment() {
         }
 
         binding.cvFinishOrderButton.setOnClickListener {
-            Toast.makeText(requireContext(), "Sipariş Tamamlandı, toplam ücret ₺${productsViewModel.cartUiState.value.total}", Toast.LENGTH_LONG).show()
             val navController = Navigation.findNavController(it)
+
+            if (productsViewModel.cartUiState.value.products.isEmpty()){
+                Toast.makeText(requireContext(), "Sepet boş olduğundan sipariş tamamlanamadı", Toast.LENGTH_LONG).show()
+            }else{
+                Toast.makeText(requireContext(), "Sipariş Tamamlandı, toplam ücret ₺${productsViewModel.cartUiState.value.total.formatDouble(2)}", Toast.LENGTH_LONG).show()
+                productsViewModel.clearCart()
+            }
+
             navController.popBackStack()
-            productsViewModel.clearCart()
         }
     }
 
