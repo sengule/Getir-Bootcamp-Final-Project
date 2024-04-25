@@ -1,4 +1,4 @@
-package com.example.getir_bootcamp_final_project
+package com.example.getir_bootcamp_final_project.presentation.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,6 +12,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.getir_bootcamp_final_project.presentation.ProductsViewModel
+import com.example.getir_bootcamp_final_project.R
 import com.example.getir_bootcamp_final_project.adapter.CartAdapter
 import com.example.getir_bootcamp_final_project.databinding.FragmentBasketBinding
 import com.example.getir_bootcamp_final_project.utils.DividerItemDecorator
@@ -79,7 +81,9 @@ class BasketFragment : Fragment() {
         cartProductRecyclerView.layoutManager = verticalLayoutManager
         cartProductRecyclerView.adapter = cartAdapter
 
-        val itemDecoration = DividerItemDecorator(ContextCompat.getDrawable(this.requireContext(), R.drawable.divider_cart_product)!!)
+        val itemDecoration = DividerItemDecorator(ContextCompat.getDrawable(this.requireContext(),
+            R.drawable.divider_cart_product
+        )!!)
         cartProductRecyclerView.addItemDecoration(itemDecoration)
         cartProductRecyclerView.isNestedScrollingEnabled = false
 

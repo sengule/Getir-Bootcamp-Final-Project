@@ -1,4 +1,4 @@
-package com.example.getir_bootcamp_final_project
+package com.example.getir_bootcamp_final_project.presentation.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
+import com.example.getir_bootcamp_final_project.presentation.ProductsViewModel
+import com.example.getir_bootcamp_final_project.R
 import com.example.getir_bootcamp_final_project.databinding.FragmentDetailBinding
 import com.example.getir_bootcamp_final_project.utils.formatDouble
 import com.example.getir_bootcamp_final_project.utils.handleProductImageUrl

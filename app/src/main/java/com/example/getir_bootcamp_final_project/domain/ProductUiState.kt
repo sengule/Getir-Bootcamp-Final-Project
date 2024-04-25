@@ -1,4 +1,4 @@
-package com.example.getir_bootcamp_final_project
+package com.example.getir_bootcamp_final_project.domain
 
 import com.example.getir_bootcamp_final_project.model.Product
 

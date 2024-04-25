@@ -1,4 +1,4 @@
-package com.example.getir_bootcamp_final_project
+package com.example.getir_bootcamp_final_project.presentation.fragment
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -17,6 +17,9 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.getir_bootcamp_final_project.domain.ProductUiState
+import com.example.getir_bootcamp_final_project.presentation.ProductsViewModel
+import com.example.getir_bootcamp_final_project.R
 import com.example.getir_bootcamp_final_project.adapter.ProductAdapter
 import com.example.getir_bootcamp_final_project.databinding.FragmentProductListingBinding
 import com.example.getir_bootcamp_final_project.model.Product
@@ -112,7 +115,7 @@ class ProductListingFragment : Fragment() {
                         is ProductUiState.Error -> {
 
                         }
-                        is ProductUiState.Idle->{
+                        is ProductUiState.Idle ->{
 
                         }
                     }

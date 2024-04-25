@@ -1,7 +1,8 @@
-package com.example.getir_bootcamp_final_project
+package com.example.getir_bootcamp_final_project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.getir_bootcamp_final_project.domain.ProductUiState
 import com.example.getir_bootcamp_final_project.domain.ProductsRepository
 import com.example.getir_bootcamp_final_project.model.CartUiState
 import com.example.getir_bootcamp_final_project.model.Product
