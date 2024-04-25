@@ -27,6 +27,7 @@ import com.example.getir_bootcamp_final_project.utils.GridItemDecorator
 import com.example.getir_bootcamp_final_project.utils.ItemDecorator
 import com.example.getir_bootcamp_final_project.utils.formatDouble
 import com.example.getir_bootcamp_final_project.utils.productList
+import com.example.getir_bootcamp_final_project.utils.safeNavigate
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -161,7 +162,8 @@ class ProductListingFragment : Fragment() {
         horizontalAdapter = ProductAdapter(
             onProductClick = { selectedProduct, view->
                 productsViewModel.setSelectedProduct(selectedProduct)
-                Navigation.findNavController(view).navigate(R.id.action_productListingFragment_to_detailFragment)
+                val action = ProductListingFragmentDirections.actionProductListingFragmentToDetailFragment()
+                Navigation.findNavController(view).safeNavigate(action)
             },
             onAddButtonClicked = {addedProduct, buttonContainer, quantityText, ic->
                 onAddButtonClicked(addedProduct, buttonContainer, quantityText, ic)
@@ -175,7 +177,8 @@ class ProductListingFragment : Fragment() {
             ProductAdapter.ITEM_LARGE,
             onProductClick = { selectedProduct, view->
                 productsViewModel.setSelectedProduct(selectedProduct)
-                Navigation.findNavController(view).navigate(R.id.action_productListingFragment_to_detailFragment)
+                val action = ProductListingFragmentDirections.actionProductListingFragmentToDetailFragment()
+                Navigation.findNavController(view).safeNavigate(action)
             },
             onAddButtonClicked = {addedProduct, buttonContainer, quantityText, ic->
                 onAddButtonClicked(addedProduct, buttonContainer, quantityText, ic)

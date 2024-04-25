@@ -106,7 +106,6 @@ class DetailFragment : Fragment() {
         }
 
         binding.llCartContainer.setOnClickListener {
-            parentFragmentManager.popBackStack()
             Navigation.findNavController(it).navigate(R.id.action_detailFragment_to_basketFragment)
         }
     }

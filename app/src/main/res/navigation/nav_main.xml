@@ -25,7 +25,10 @@
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/action_detailFragment_to_basketFragment"
-            app:destination="@id/basketFragment" />
+            app:destination="@id/basketFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/detailFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/basketFragment"

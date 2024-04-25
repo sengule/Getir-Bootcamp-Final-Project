@@ -2,10 +2,14 @@ package com.example.getir_bootcamp_final_project.utils
 
 import android.animation.Animator
 import android.animation.ValueAnimator
+import android.app.PendingIntent.getActivity
 import android.view.View
 import android.view.ViewGroup.LayoutParams
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.OvershootInterpolator
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import com.example.getir_bootcamp_final_project.model.Product
 
 const val DISCOUNT_VALUE = 15
@@ -74,4 +78,15 @@ fun collapse(v: View) {
     va.setDuration(1000)
     va.interpolator = DecelerateInterpolator()
     va.start()
+}
+
+fun NavController.safeNavigate(direction: NavDirections) {
+    currentDestination?.getAction(direction.actionId)?.run { navigate(direction) }
+    println(currentDestination?.id)
+}
+
+fun clearBackStack(fm: FragmentManager){
+    for (i in 0 until fm.backStackEntryCount) {
+        fm.popBackStack()
+    }
 }

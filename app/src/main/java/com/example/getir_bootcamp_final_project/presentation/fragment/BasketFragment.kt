@@ -18,6 +18,7 @@ import com.example.getir_bootcamp_final_project.adapter.CartAdapter
 import com.example.getir_bootcamp_final_project.databinding.FragmentBasketBinding
 import com.example.getir_bootcamp_final_project.utils.DividerItemDecorator
 import com.example.getir_bootcamp_final_project.utils.applyDiscount
+import com.example.getir_bootcamp_final_project.utils.clearBackStack
 import com.example.getir_bootcamp_final_project.utils.formatDouble
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -117,6 +118,7 @@ class BasketFragment : Fragment() {
             }else{
                 Toast.makeText(requireContext(), "Sipariş Tamamlandı, toplam ücret ₺${productsViewModel.cartUiState.value.total.formatDouble(2)}", Toast.LENGTH_LONG).show()
                 productsViewModel.clearCart()
+                clearBackStack(parentFragmentManager)
             }
 
             navController.popBackStack()

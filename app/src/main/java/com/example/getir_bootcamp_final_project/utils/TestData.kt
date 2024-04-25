@@ -9,6 +9,7 @@ val productList = listOf<Product>(
         price = 0.0,
         priceText = "₺0.0",
         attribute = "test",
+        quantity = 0
     ),
     Product(
         id = "2",
